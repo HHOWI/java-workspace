@@ -11,7 +11,7 @@ public class VariablePractice {
 		VariablePractice vp = new VariablePractice();
 //		vp.method1();
 //		vp.method2();
-//		vp.method3();
+		vp.method3();
 //		vp.method4();
 		
 	}
@@ -51,9 +51,10 @@ public class VariablePractice {
 		int y = 7;
 		int z = 9;
 		
+		int num = x;
 		x = y;
 		y = z;
-		z = x - 2;
+		z = num; // 여기 부분! - 2를 사용하지 않고 다시 생각해보실래요? // 이렇게 푸는게 맞을까요?
 		
 		System.out.println("x=" + x);
 		System.out.println("y=" + y);
@@ -68,7 +69,7 @@ Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();	
 		
 		System.out.printf("첫번째 문자 : %s\n", str.charAt(0));
-		System.out.printf("마지막 문자 : %s", str.charAt(str.length()-1));
+		System.out.printf("마지막 문자 : %s", str.charAt(str.length()-1)); // 오! 잘하셨습니다 :)
 
 	}
 }
