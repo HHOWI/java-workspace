@@ -108,9 +108,10 @@ public class OperatorPractice {
 		System.out.print("바구니의 크기 : ");
 		num2 = sc.nextInt();
 		
-		num3 = (num1 / num2) + ((num1 % num2 < 10) ? 1 : 0);
-		
-		System.out.printf("필요한 바구니의 수 : %d", num3);
+		num3 = (num1 / num2) + ((num1 % num2 >= 1) ? 1 : 0);
+		                       // 접근 방식 정말 잘하셨어요! 여기 < 10 이하를 추가하게 된 이유가 있을까요? 이 코드를 조금만 더 수정하면 될거 같아요! // 바구니 크기 10일때만 생각을 했네요 다시 짜봤습니다!
+							    
+		System.out.printf("필요한 바구니의 수 : %d", num3); // 사과의 갯수가 12, 바구니의 크기가 2일 때 확인!
 		
 		
 	}
