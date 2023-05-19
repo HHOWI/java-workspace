@@ -422,7 +422,7 @@ public class ConditionPractice {
     	double score1 = 0;
     	double score2 = 0;
     	double practiceScore = 0;
-    	double attendance = 0;
+    	int attendance = 0;
     	double totalScore = 0;
     	String result1 = null;
     	String result2 = null;
@@ -434,7 +434,7 @@ public class ConditionPractice {
          System.out.print("과제 점수 : ");
          practiceScore = sc.nextDouble();
          System.out.print("출석 회수 : ");
-         attendance = sc.nextDouble();
+         attendance = sc.nextInt();
          System.out.println("===========결과==========");
          
         totalScore = (score1 * 0.2) + (score2 * 0.3) + (practiceScore * 0.3) + (attendance);
@@ -451,11 +451,11 @@ public class ConditionPractice {
         	System.out.printf("FAIL [점수미달] (총점 %.1f)", totalScore);
         }
         else if(totalScore >= 70) {
-        	System.out.printf("FAIL [출석 횟수 부족] (%d/20)", attendance); //오류가 나는데 해결을 못하겠어요 ㅠㅠ
+        	System.out.print("FAIL [출석 횟수 부족] (" + attendance + "/20)");
         }
         else {
-        	System.out.printf("FAIL [출석 횟수 부족] (%d/20)", attendance);//오류가 나는데 해결을 못하겠어요 ㅠㅠ
-        	System.out.printf("FAIL [점수미달] (총점 %.1f)", totalScore);  //오류가 나는데 해결을 못하겠어요 ㅠㅠ
+        	System.out.println("FAIL [출석 횟수 부족] (" + attendance + "/20)");
+        	System.out.printf("FAIL [점수미달] (총점 %.1f)", totalScore);  
         }
     }
     
