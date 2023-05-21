@@ -32,16 +32,18 @@ class LoopPractice {
         int num1 = 0;
         int num2 = 0;
  
-        while(num1 < 100) {
-            ++num2;
-            if(num2 % 2 == 0) {
+        // 민수님 코드 그대로 왜 작동하는지 설명 작성할게요~~
+        while(num1 < 100) { // 조건식을 100 이하 까지로 해놓으셨으니!
+            ++num2;         // num1 = 0에서 시작, num2가 여기서 더해지니 이때 1로 시작하죠?
+            if(num2 % 2 == 0) { // 조건문을 만남! 짝수면 여기! 짝수인 경우 -를 붙이라고 했으니 잘하셨음!
             	num1-=num2; // 1-2=-1 2-4=-2 3-6=-3 4-8=-4
-            } else {
+            } else {            // 나머지는 홀수! 여기~~
             	num1+=num2; // 0+1=1 -1+3=2 -2+5=3 -3+7=4
             }
+            // num1이 계속 더해지고 더해지고~~ 고러다 100 이상이 되는 순간 stop하겠죠?
         }
-        System.out.println(num2);
-    	    } //구글링해서 겨우 풀긴했는데 해석이 잘 안되네요 너무 어려워요 ㅠㅠ
+        System.out.println(num2); // 그때 나온 것이 여기!
+    	    } //구글링해서 겨우 풀긴했는데 해석이 잘 안되네요 너무 어려워요 ㅠㅠ 
 
     /*
         사용자로부터 문자열을 입력 받고 문자열에서 검색될 문자를 입력 받아 해당 문자열에 그 문자가 몇 개 있는지 개수를 출력하세요. 
@@ -80,8 +82,12 @@ class LoopPractice {
         0
      */
     public void method4() { 	
+    	
+    	
+    	// Math.random 범위 수정! 지금은 0~9까지만 나와서 10이 안나와요! 
+    	
     	while(true) {  								//조건 없이 반복
-    		int random = (int)(Math.random() * 10); //랜덤값 대입. 반복문 안에 있기 때문에 반복적으로 계속 대입됨
+    		int random = (int)(Math.random() * 11); //랜덤값 대입. 반복문 안에 있기 때문에 반복적으로 계속 대입됨
         	System.out.println(random);				//랜덤값 출력
         	if(random == 0) {						//만약 랜덤이 0이 나왔다면		
         		break;								//while문에서 빠져나옴
@@ -209,8 +215,8 @@ class LoopPractice {
 //    	lp.method1();
 //    	lp.method2(); 
 //    	lp.method3();
-//    	lp.method4();
-//    	lp.method5();
+    	lp.method4();
+    	lp.method5();
     	lp.method6();
     }
 }

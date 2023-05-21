@@ -25,7 +25,7 @@ public class ConditionPractice {
         	if(num%2==0) {
         		str = "짝수다";
         	}
-        	else if(num%2==1) {
+        	else if(num%2==1) { // else 만으로도 가능! 위에서 짝수를 처리했으니까요~~
             	str = "홀수다";
             }
         }
@@ -76,13 +76,18 @@ public class ConditionPractice {
     public void practice3() {
         int num1 = 0;
         int num2 = 0;
+        int num3 = 0;
         
         System.out.print("피자 조각 수 : ");
         num1 = sc.nextInt();
         System.out.print("피자 먹는 사람 수 : ");
         num2 = sc.nextInt();
         
-        int num3 = (num2 / num1) + 1;
+        num3 = (num2 / num1);
+        
+        if(num2%num1 != 0) {
+        	num3 += 1; // 요렇게 되면 딱 떨어졌을 때가 안될거에요~ 예를 들어서 피자 조각 수는 4조각, 사람 수는 8명 일때 어떨까요??
+        }
         
         System.out.print(num3);
        
@@ -317,7 +322,7 @@ public class ConditionPractice {
         System.out.print("연산자를 입력(+,-,*,/,%) : " );
         ch = sc.next().charAt(0);
         
-        if (num1 <= 0 || num2 <= 0) {
+        if (num1 <= 0 || num2 <= 0) { // return을 벌써 써버리시다니~~~ 메소드에서 return 자세히 알려드릴게요 :)
             System.out.print("잘못 입력하셨습니다. 프로그램을 종료합니다.");
             return;
         }
@@ -422,7 +427,7 @@ public class ConditionPractice {
     	double score1 = 0;
     	double score2 = 0;
     	double practiceScore = 0;
-    	int attendance = 0;
+    	double attendance = 0;
     	double totalScore = 0;
     	String result1 = null;
     	String result2 = null;
@@ -437,7 +442,7 @@ public class ConditionPractice {
          attendance = sc.nextInt();
          System.out.println("===========결과==========");
          
-        totalScore = (score1 * 0.2) + (score2 * 0.3) + (practiceScore * 0.3) + (attendance);
+        totalScore = (score1 * 0.2) + (score2 * 0.3) + (practiceScore * 0.3) + attendance;
         
         if(totalScore >= 70 && attendance >= 14) {
         	 System.out.printf("중간 고사 점수(20) : %.1f\n", score1 * 0.2);
@@ -446,17 +451,15 @@ public class ConditionPractice {
         	 System.out.printf("출석 점수(20) : %.1f\n", attendance);
         	 System.out.printf("총점 : %.1f\n", totalScore);
         	 System.out.print("PASS");
-        }
-        else if(attendance >= 14) {
+        } else if(totalScore < 70 && attendance >= 14) {
         	System.out.printf("FAIL [점수미달] (총점 %.1f)", totalScore);
+        } else if(attendance < 14) {
+        	System.out.println("FAIL [출석 횟수 부족] (" + (int) attendance + "/20)");        	
+        	if(totalScore < 70) {
+        		System.out.printf("FAIL [점수미달] (총점 %.1f)", totalScore);
+        	}
         }
-        else if(totalScore >= 70) {
-        	System.out.print("FAIL [출석 횟수 부족] (" + attendance + "/20)");
-        }
-        else {
-        	System.out.println("FAIL [출석 횟수 부족] (" + attendance + "/20)");
-        	System.out.printf("FAIL [점수미달] (총점 %.1f)", totalScore);  
-        }
+        		// 혹시나 출석 횟수 부족 이 코드를 한 번만 쓰고 싶다~ 그러시면 중복 if문이랑 if 각각 써보는 방법도 추천드려요!
     }
     
 
