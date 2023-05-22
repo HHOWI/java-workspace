@@ -127,13 +127,88 @@ public class D_While {
 		System.out.println(random);
 		
 	}
+	/*
+	 * -----------------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------------
+	 * 선택 > 1
+	 * 예금액 > 5000
+	 * 
+	 * -----------------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------------
+	 * 선택 > 2
+	 * 출금액 > 2000
+	 * 
+	 * -----------------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------------
+	 * 선택 > 3
+	 * 잔고 > 3000
+	 * 
+	 * -----------------------------------------
+	 * 1.예금 | 2. 출금 | 3. 잔고 | 4. 종료
+	 * -----------------------------------------
+	 * 선택 > 4
+	 * 프로그램 종료
+	 */
+	public void method6() {
+		int input = 0;
+		int money = 0;
+		String str = null;
+		boolean run = true;
+		
+		while(run) {
+			System.out.println("--------------------------------");
+			System.out.println("1.예금 | 2. 출금 | 3. 잔고 | 4. 종료");
+			System.out.println("--------------------------------");
+			
+			System.out.print("선택 > ");
+			//Integer.parseInt : Integer 클래스의 parseInt 메소드 (String -> int)
+			
+			input = Integer.parseInt(sc.nextLine());
+			
+//			if(input == 1) {
+//				System.out.print("예금액 > ");
+//				money = sc.nextInt();
+//				System.out.println("");
+//			} else if(input == 2) {
+//				System.out.print("출금액 > ");
+//				money = sc.nextInt();
+//				System.out.println("");
+//			} else if(input == 3) {
+//				System.out.print("잔고 > ");
+//				money = sc.nextInt();
+//				System.out.println("");
+//			} else {
+//				System.out.print("프로그램 종료");
+//				System.out.println(""); break;
+//			}
+			switch(input) {
+			case 1: System.out.print("예금액 > ");
+					money += Integer.parseInt(sc.nextLine());
+					System.out.println(""); break;
+			case 2: System.out.print("출금액 > ");
+					money -= Integer.parseInt(sc.nextLine());
+					System.out.println(""); break;
+			case 3: System.out.print("잔고 > ");
+					System.out.println(money);
+					System.out.println(""); break;
+			case 4: System.out.println("프로그램 종료");
+					System.out.println(""); 
+					run = false; break;
+			}
+		}
+	
+	}
 	public static void main(String[] args) {
 		D_While d = new D_While();
 //		d.method1();
 //		d.method2();
 //		d.method3();
 //		d.method4();
-		d.method5();
+//		d.method5();
+		d.method6();
 	}
 
 }
