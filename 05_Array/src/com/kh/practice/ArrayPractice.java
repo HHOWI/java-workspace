@@ -1,5 +1,6 @@
 package com.kh.practice;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -84,12 +85,21 @@ public class ArrayPractice {
 	 * 
 	 * */
 	public void method4() {
-//		String num[][] = new String[][];
 		
-		System.out.print(Arrays.toString(num));
+		String input = null;
 		
-
+		System.out.print("주민등록번호 : ");
+		input = sc.nextLine();
 		
+		char num[] = input.toCharArray(); // 입력받은 문자열을 문자로 배열
+		char copy[] = new char[14]; // 복사받을 배열 선언 및 초기화
+		
+		System.arraycopy(num, 0, copy, 0, num.length); //num을 copy에 num 0에서 길이만큼(처음부터 끝까지) 복사
+		
+		for(int i=8; i<input.length(); i++) { // 성별자리 이후 부터 끝까지 반복
+			copy[i] = '*'; // 성별자리 이후 부터의 배열에 * 대입
+		}
+		System.out.print(copy);		
 	}
 	
 	/*
@@ -100,14 +110,21 @@ public class ArrayPractice {
 	 * 
 	 * */
 	public void method5() {
+		
 		String input = null;
-		
+	
 		System.out.print("단어 입력 : ");
-		input = sc.nextLine();
+		input = sc.nextLine(); 
+
+		char arr[] = input.toCharArray(); //입력 받은 문자열을 문자 배열로 변환
+		int length = arr.length;		//배열의 길이
 		
-		String word[] = new String[input.length()];
+		for(int i=length - 1; i>=0; i--) { // 배열의 길이만큼 반복 ( -1 은 배열의 인덱스 값이 0부터 시작하기 때문)		
+			System.out.print(arr[i]);	// 끝부터 출력
+			
+		}
 		
-		for(int i=0; i<)
+
 		
 	}
 	
@@ -117,8 +134,8 @@ public class ArrayPractice {
 //		ap.method1();
 //		ap.method2();
 //		ap.method3();
-//		ap.method4();
-		ap.method5();
+		ap.method4();
+//		ap.method5();
 		
 	}
 	
