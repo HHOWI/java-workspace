@@ -19,23 +19,23 @@ public class Video {
 	 * Delete : 삭제
 	 */
 	
-	public void upload() { // 영상 업로드
-		
+	public Video upload() { // 영상 업로드
+		return null;
 	}
 	
-	public void videoList() { // 영상 목록
-		
+	public Video videoList() { // 영상 목록
+		return null;
 	}
 	
-	public void viewVideo() { // 영상 1개 보기
-		
+	public Video viewVideo() { // 영상 1개 보기
+		return null;
 	}
 	
-	public void updateVideo() { // 동영상 수정
-		
+	public Video updateVideo() { // 동영상 수정
+		return null;
 	}
 	
-	public void delelteVideo() { // 동영상 삭제
-		
+	public boolean delelteVideo() { // 동영상 삭제
+		return false;
 	}
 }
