@@ -11,31 +11,65 @@ public class Video {
 	public int likeCount;
 	public String imgUrl;
 	public String fileUrl;
-	
-	/*
-	 * Create : 추가
-	 * Read : 읽기(1개, 목록)
-	 * Update : 수정
-	 * Delete : 삭제
-	 */
-	
-	public Video upload() { // 영상 업로드
-		return null;
+	public Video() {
+	}
+	public Video(String title, String comment, Date uploadAt, int viewCount, int likeCount, String imgUrl,
+			String fileUrl) {
+		this.title = title;
+		this.comment = comment;
+		this.uploadAt = uploadAt;
+		this.viewCount = viewCount;
+		this.likeCount = likeCount;
+		this.imgUrl = imgUrl;
+		this.fileUrl = fileUrl;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+	public Date getUploadAt() {
+		return uploadAt;
+	}
+	public void setUploadAt(Date uploadAt) {
+		this.uploadAt = uploadAt;
+	}
+	public int getViewCount() {
+		return viewCount;
+	}
+	public void setViewCount(int viewCount) {
+		this.viewCount = viewCount;
+	}
+	public int getLikeCount() {
+		return likeCount;
+	}
+	public void setLikeCount(int likeCount) {
+		this.likeCount = likeCount;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+	public String getFileUrl() {
+		return fileUrl;
+	}
+	public void setFileUrl(String fileUrl) {
+		this.fileUrl = fileUrl;
+	}
+	@Override
+	public String toString() {
+		return "Video [title=" + title + ", comment=" + comment + ", uploadAt=" + uploadAt + ", viewCount=" + viewCount
+				+ ", likeCount=" + likeCount + ", imgUrl=" + imgUrl + ", fileUrl=" + fileUrl + "]";
 	}
 	
-	public Video videoList() { // 영상 목록
-		return null;
-	}
 	
-	public Video viewVideo() { // 영상 1개 보기
-		return null;
-	}
-	
-	public Video updateVideo() { // 동영상 수정
-		return null;
-	}
-	
-	public boolean delelteVideo() { // 동영상 삭제
-		return false;
-	}
 }

@@ -216,7 +216,7 @@ class LoopPractice {
 //    	lp.method2(); 
 //    	lp.method3();
     	lp.method4();
-    	lp.method5();
-    	lp.method6();
+//    	lp.method5();
+//    	lp.method6();
     }
 }
