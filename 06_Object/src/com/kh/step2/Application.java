@@ -1,4 +1,4 @@
-package com.kh.step2.m;
+package com.kh.step2;
 
 import com.kh.step2.model.Card;
 
