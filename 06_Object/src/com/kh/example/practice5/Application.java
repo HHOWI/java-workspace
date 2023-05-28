@@ -25,48 +25,49 @@ public class Application {
 
 		Application app = new Application();
 
-//		int choice = app.employeeMenu();
-//		for (; choice != 9;) {
-//
-//			app.employeeMenu();
-//
-//			if (choice == 1) {
-//
-//				app.insertEMP();
-//
-//			} else if (choice == 2) {
-//
-//				app.updateEMP();
-//
-//			} else if (choice == 3) {
-//
-//				app.printEMP();
-//
-//			}
-//
-//		}
-//
-//		System.out.println("프로그램을 종료합니다.");
+		int choice = 0;
 
-		boolean check = true;
-		int select = app.employeeMenu();
-		while (check) {
-			switch (select) {
-			case 1:
+		for (; choice != 9;) {
+
+			choice = app.employeeMenu(); // 호출하고 choice에 반환이 동시에 작동
+
+			if (choice == 1) {
+
 				app.insertEMP();
-				break;
-			case 2:
+
+			} else if (choice == 2) {
+
 				app.updateEMP();
-				break;
-			case 3:
+
+			} else if (choice == 3) {
+
 				app.printEMP();
-				break;
-			case 9:
-				System.out.println("프로그램을 종료합니다.");
-				check = false;
-				break;
+
 			}
+
 		}
+
+		System.out.println("프로그램을 종료합니다.");
+
+//		boolean check = true;
+//		int select = app.employeeMenu();
+//		while (check) {
+//			switch (select) {
+//			case 1:
+//				app.insertEMP();
+//				break;
+//			case 2:
+//				app.updateEMP();
+//				break;
+//			case 3:
+//				app.printEMP();
+//				break;
+//			case 9:
+//				System.out.println("프로그램을 종료합니다.");
+//				check = false;
+//				break;
+//			}
+//		}
 
 	}
 
