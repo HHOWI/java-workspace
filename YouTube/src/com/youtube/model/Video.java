@@ -10,8 +10,9 @@ public class Video {
 	private int count; //views
 	private String imgUrl;
 	private String fileUrl;
-	public Video() {
-	}
+	
+	public Video() {}
+	
 	public Video(String title, String comment, Date uploadAt, int count, String imgUrl, String fileUrl) {
 		this.title = title;
 		this.comment = comment;
