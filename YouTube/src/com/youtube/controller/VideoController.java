@@ -2,7 +2,32 @@ package com.youtube.controller;
 
 import com.youtube.model.Video;
 
-public class VideoController {
+public class VideoController implements VideoControllerImpl {
+
+	@Override
+	public Video upload() {
+		return null;
+	}
+
+	@Override
+	public Video[] videoList() {
+		return null;
+	}
+
+	@Override
+	public Video viewVideo() {
+		return null;
+	}
+
+	@Override
+	public Video updateVideo() {
+		return null;
+	}
+
+	@Override
+	public boolean delelteVideo() {
+		return false;
+	}
 
 	/*
 	 * Create : 추가
@@ -11,23 +36,5 @@ public class VideoController {
 	 * Delete : 삭제
 	 */
 	
-	public Video upload() { // 영상 업로드
-		return null;
-	}
 	
-	public Video[] videoList() { // 영상 목록
-		return null;
-	}
-	
-	public Video viewVideo() { // 영상 1개 보기
-		return null;
-	}
-	
-	public Video updateVideo() { // 동영상 수정
-		return null;
-	}
-	
-	public boolean delelteVideo() { // 동영상 삭제
-		return false;
-	}
 }
