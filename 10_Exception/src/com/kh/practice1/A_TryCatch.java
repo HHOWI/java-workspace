@@ -3,7 +3,7 @@ package com.kh.practice1;
 /*
  * 컴파일 에러(compile-time error) : 컴파일 시에 발생하는 에러
  * 런타임 에러(runtime error) : 실행 시에 발생하는 에러
- * 논리적 에러(logical error) : 실해은 되지만, 의도와 다르게 동작
+ * 논리적 에러(logical error) : 실행은 되지만, 의도와 다르게 동작
  * 
  * * 런타임 에러 2가지
  * - 에러(error) : 프로그램 코드에 의해서 수습될 수 없는 심각한 오류 -> 메모리 부족(OutOfMemoryError) 또는 스택오버플로우(StackOverflowError)
