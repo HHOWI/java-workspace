@@ -113,7 +113,6 @@ public class Application {
 		 * false면 "새 농산물 추가에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * 
 		 */
-		
 
 		boolean check = true;
 
@@ -122,19 +121,44 @@ public class Application {
 			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
 			System.out.print("추가할 종류 번호 : ");
 			int select = Integer.parseInt(sc.nextLine());
+			
+			switch (select) {
+			case 1: case 2: case 3:		
+				break;		
+			default:
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				continue;
+			}
+			
 			System.out.print("추가할 이름 : ");
 			String name = sc.nextLine();
 			System.out.print("추가할 수량 : ");
 			int amount = Integer.parseInt(sc.nextLine());
+
+			Farm farm;
+			switch (select) {
+			case 1:
+				farm = new Fruit(Integer.toString(select), name);
+				break;
+			case 2:
+				farm = new Vegetable(Integer.toString(select), name);
+				break;
+			case 3:
+				farm = new Nut(Integer.toString(select), name);
+				break;
+			default:
+				System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");
+				continue;
+			}
 			
-			boolean check1 = fc.addNewKind(new Farm(Integer.toString(select), name), amount);
-			
-			if (check1) {
+			boolean result = fc.addNewKind(farm, amount);
+			if (result) {
 				System.out.println("새 농산물이 추가되었습니다.");
 				check = false;
 			} else {
-				System.out.println("새 농산물 추가에 실패하였습니다. 다시 입력해주세요.");
+				System.out.println("새 농산물 추가에 실패하였습니다. 다시 입력하세요.");
 			}
+
 		}
 
 	}
@@ -149,25 +173,25 @@ public class Application {
 		 * false면 "농산물 삭제에 실패하였습니다. 다시 입력해주세요." 출력되며 다시 번호를 받음.
 		 * 
 		 */
-		
+
 		boolean check = true;
 
-		while (check) {			
-			
-		System.out.println("1. 과일 / 2. 채소 / 3. 견과");
-		System.out.print("삭제할 종류 번호 : ");
-		int select = Integer.parseInt(sc.nextLine());
-		System.out.print("삭제할 이름 : ");
-		String name = sc.nextLine();
+		while (check) {
 
-		if(fc.removeKind(new Farm(Integer.toString(select), name))) {
-			System.out.println("농산물 삭제에 성공하였습니다.");
-			check = false;
-		} else {
-			System.out.println("농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
+			System.out.println("1. 과일 / 2. 채소 / 3. 견과");
+			System.out.print("삭제할 종류 번호 : ");
+			int select = Integer.parseInt(sc.nextLine());
+			System.out.print("삭제할 이름 : ");
+			String name = sc.nextLine();
+
+			if (fc.removeKind(new Farm(Integer.toString(select), name))) {
+				System.out.println("농산물 삭제에 성공하였습니다.");
+				check = false;
+			} else {
+				System.out.println("농산물 삭제에 실패하였습니다. 다시 입력해주세요.");
+			}
 		}
-		}
-		
+
 	}
 
 	public void changeAmount() {
@@ -233,7 +257,7 @@ public class Application {
 	}
 
 	public void printBuyFarm() {
-		
+
 		// fc의 printBuyFarm()의 반환 값을 이용하여 출력
 
 	}
