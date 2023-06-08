@@ -4,22 +4,38 @@ import com.placetube.model.User;
 
 public class UserController {
 
-	public boolean login() { // 로그인
+User user = null;
+	
+	
+	public boolean login(String id, String password) {
+		if(user!=null && user.getId().equals(id) && user.getPwd().equals(password)) {
+			return true;
+		}
 		return false;
 	}
+
 	
-	public boolean signUp() { // 회원가입
-		return false;
+	public void signUp(User user) {
+		this.user = user;
 	}
-	
-	public User viewProfile() { // 프로필 보기
+
+	public User viewProfile() { //프로필 보기 (로그인 된 경우)
+		if(login(user.getId(), user.getPwd())) {
+			return user;
+		}
 		return null;
 	}
-	
-	public User updateProfile() { // 프로필 수정
-		return null;
+
+	public User updateProfile() { // 프로필 수정 (로그인 된 경우)
+		if(login(this.user.getId(), this.user.getPwd())) {
+			this.user = user;
+		}
+		return this.user;
 	}
-	public boolean deleteProfile() { // 계정 삭제
-		return false;
+
+	public void deleteProfile(String id) { // 계정 삭제
+		if(user.getId().equals(id)) {
+			user = null;
+		}
 	}
 }

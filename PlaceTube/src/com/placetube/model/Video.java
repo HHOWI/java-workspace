@@ -1,75 +1,109 @@
 package com.placetube.model;
 
 import java.util.Date;
+import java.util.List;
 
 public class Video {
 
-	public String title;
-	public String comment;
-	public Date uploadAt;
-	public int viewCount;
-	public int likeCount;
-	public String imgUrl;
-	public String fileUrl;
-	public Video() {
-	}
-	public Video(String title, String comment, Date uploadAt, int viewCount, int likeCount, String imgUrl,
-			String fileUrl) {
-		this.title = title;
-		this.comment = comment;
-		this.uploadAt = uploadAt;
-		this.viewCount = viewCount;
-		this.likeCount = likeCount;
-		this.imgUrl = imgUrl;
-		this.fileUrl = fileUrl;
-	}
+	private String title;
+	private Date uploadAt;
+	private int views;
+	private int likes;
+	private String imgUrl;
+	private String fileUrl;
+	private String desc;
+	private char kind;
+	private String place;
+
+	private List<Comment> comments;
+	private Category category;
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
-	}
+
 	public Date getUploadAt() {
 		return uploadAt;
 	}
+
 	public void setUploadAt(Date uploadAt) {
 		this.uploadAt = uploadAt;
 	}
-	public int getViewCount() {
-		return viewCount;
+
+	public int getViews() {
+		return views;
 	}
-	public void setViewCount(int viewCount) {
-		this.viewCount = viewCount;
+
+	public void setViews(int views) {
+		this.views = views;
 	}
-	public int getLikeCount() {
-		return likeCount;
+
+	public int getLikes() {
+		return likes;
 	}
-	public void setLikeCount(int likeCount) {
-		this.likeCount = likeCount;
+
+	public void setLikes(int likes) {
+		this.likes = likes;
 	}
+
 	public String getImgUrl() {
 		return imgUrl;
 	}
+
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
+
 	public String getFileUrl() {
 		return fileUrl;
 	}
+
 	public void setFileUrl(String fileUrl) {
 		this.fileUrl = fileUrl;
 	}
-	@Override
-	public String toString() {
-		return "Video [title=" + title + ", comment=" + comment + ", uploadAt=" + uploadAt + ", viewCount=" + viewCount
-				+ ", likeCount=" + likeCount + ", imgUrl=" + imgUrl + ", fileUrl=" + fileUrl + "]";
+
+	public String getDesc() {
+		return desc;
 	}
-	
-	
+
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
+
+	public char getKind() {
+		return kind;
+	}
+
+	public void setKind(char kind) {
+		this.kind = kind;
+	}
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
 }

@@ -1,5 +1,7 @@
 package com.placetube.controller;
 
+import java.util.ArrayList;
+
 import com.placetube.model.Video;
 
 public class VideoController {
@@ -11,23 +13,25 @@ public class VideoController {
 	 * Delete : 삭제
 	 */
 	
-	public Video upload() { // 영상 업로드
-		return null;
-	}
+	ArrayList<Video> videoList = new ArrayList<>();
 	
-	public Video videoList() { // 영상 목록
-		return null;
+	public void upload(Video video) {
+		videoList.add(video);
 	}
-	
-	public Video viewVideo() { // 영상 1개 보기
-		return null;
+
+	public ArrayList<Video> videoList() { // 동영상 목록
+		return videoList;
 	}
-	
-	public Video updateVideo() { // 동영상 수정
-		return null;
+
+	public Video viewVideo(int index) { // 동영상 1개 보기
+		return videoList.get(index);
 	}
-	
-	public boolean delelteVideo() { // 동영상 삭제
-		return false;
+
+	public void updateVideo(int index, Video video) {
+		videoList.set(index, video);
+	}
+
+	public boolean deleteVideo(Video video) {
+		return videoList.remove(video);
 	}
 }

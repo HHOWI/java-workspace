@@ -2,18 +2,7 @@ package com.kh.practice3.model;
 
 public class Vegetable extends Farm {
 
-	public Vegetable() {
-		super();
+	public Vegetable(String name) {
+		super("채소", name);
 	}
-
-	public Vegetable(String kind, String name) {
-		super(kind, name);
-	}
-
-	@Override
-	public String toString() {
-		return "Vegetable []";
-	}
-
-	
 }
