@@ -19,7 +19,11 @@ public class BookController {
 	// src/books.obj 파일에 저장
 	public void fileSave(Book book) {
 
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("src/book.obj", true))) {
+		
+		// FileOutputStream 클래스로 "src/book.obj" 에 파일 생성
+		try (FileOutputStream fos = new FileOutputStream("src/book.obj", true);
+				// ObjectOutputStream 클래스로 객체단위로 출력을 위해 저장
+				ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 
 			oos.writeObject(book);
 
