@@ -1,6 +1,7 @@
 package com.kh.time;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -143,32 +144,54 @@ public class A_Date {
 	public void practice() {
 		
 		Scanner sc = new Scanner(System.in);
-		
+	
 		System.out.print("태어난 날을 yyyy/MM/dd 형태로 입력하세요 : ");
 		String bd = sc.nextLine();
 		
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		Date result = null;
+	
 		try {
-			
-		String[] bdArr = bd.split("/");
-		
-		Calendar date = Calendar.getInstance();
-		Calendar today1 = Calendar.getInstance();
-		date.set(Integer.parseInt(bdArr[0]), (Integer.parseInt(bdArr[1])-1), Integer.parseInt(bdArr[2]));
-		
-		long day = date.getTimeInMillis()/1000/60/60/24;
-		long today2 = today1.getTimeInMillis()/1000/60/60/24;
-		
-		Date d = new Date(date.getTimeInMillis());
-		
-		SimpleDateFormat sdf = new SimpleDateFormat("E");
-		
-		String formatDate = sdf.format(d);
-		
-		System.out.println(bd + " 는 " + formatDate + "요일이고 지금까지 " + (today2 - day + 1) + "일 지났습니다.");
-		
-		} catch(NumberFormatException e) {
+			result = sdf.parse(bd);
+		} catch (ParseException e) {
 			System.out.println("잘못된 형식으로 입력하였습니다. 다시 입력하여 주십시오.");
 			this.practice();
 		}
+		
+		Calendar inputDate = Calendar.getInstance();
+		Calendar today = Calendar.getInstance();
+		
+		inputDate.setTime(result);
+		
+		SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd은 E요일입니다.");
+		
+		System.out.println(sdf2.format(result));
+		
+		long day = (today.getTimeInMillis() - inputDate.getTimeInMillis())/(1000*60*60*24);
+		
+		System.out.println("태어난 날 부터 지금까지 " + day + "일 지났습니다.");
+//		try {
+//			
+//		String[] bdArr = bd.split("/");
+//		
+//		Calendar date = Calendar.getInstance();
+//		Calendar today1 = Calendar.getInstance();
+//		date.set(Integer.parseInt(bdArr[0]), (Integer.parseInt(bdArr[1])-1), Integer.parseInt(bdArr[2]));
+//		
+//		long day = date.getTimeInMillis()/1000/60/60/24;
+//		long today2 = today1.getTimeInMillis()/1000/60/60/24;
+//		
+//		Date d = new Date(date.getTimeInMillis());
+//		
+//		SimpleDateFormat sdf = new SimpleDateFormat("E");
+//		
+//		String formatDate = sdf.format(d);
+//		
+//		System.out.println(bd + " 는 " + formatDate + "요일이고 지금까지 " + (today2 - day + 1) + "일 지났습니다.");
+//		
+//		} catch(NumberFormatException e) {
+//			System.out.println("잘못된 형식으로 입력하였습니다. 다시 입력하여 주십시오.");
+//			this.practice();
+//		}
 	}
 }
