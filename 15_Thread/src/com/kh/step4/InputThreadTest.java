@@ -6,14 +6,14 @@ public class InputThreadTest {
 
 	public static void main(String[] args) {
 
-		InputThread it = new InputThread();
-		CountingThread ct = new CountingThread();
+//		InputThread it = new InputThread();
+//		CountingThread ct = new CountingThread();
+//
+//		Thread itThread = new Thread(it, "InputThread");
+//		Thread ctThread = new Thread(ct, "CountingThread");
 
-		Thread itThread = new Thread(it, "InputThread");
-		Thread ctThread = new Thread(ct, "CountingThread");
-
-		itThread.start();
-		ctThread.start();
+//		itThread.start();
+//		ctThread.start();
 
 	}
 }
