@@ -34,13 +34,29 @@ public class UserController {
 	}
 
 	public void signUp(User user) {
+
+		if (isDuplicateId(user.getId())) {
+			System.out.println("이미 사용 중인 아이디입니다. 다른 아이디를 선택해주세요.");
+			return; // 회원가입 거부
+		}
+
 		userList.add(user);
+		System.out.println("회원가입이 완료되었습니다.");
+	}
+
+	private boolean isDuplicateId(String id) {
+		for (User user : userList) {
+			if (user.getId().equals(id)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public void updateNickname(String newNickname) {
 		loggedInUser.setNickname(newNickname);
 		System.out.println("닉네임이 " + newNickname + " 으로 변경되었습니다.");
-		
+
 	}
 
 	public boolean deleteProfile(String id, String password) {
@@ -52,4 +68,9 @@ public class UserController {
 			return false;
 		}
 	}
+	
+	public User getLoggedInUser() {
+	    return loggedInUser;
+	}
+	
 }

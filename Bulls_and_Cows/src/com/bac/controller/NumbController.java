@@ -7,7 +7,7 @@ import com.bac.model.Numb;
 
 public class NumbController {
 
-	Numb number = null;
+	private Numb number = null;
 	List<String> numbers = new ArrayList<>();
 
 	public void selectNum(String input) {
@@ -19,7 +19,7 @@ public class NumbController {
 		}
 
 		number = new Numb(numbers.get(0), numbers.get(1), numbers.get(2));
-		
+
 		System.out.println(number);
 	}
 
