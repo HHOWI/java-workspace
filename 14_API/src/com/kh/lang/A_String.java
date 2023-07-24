@@ -17,11 +17,11 @@ public class A_String {
 
 	public static void main(String[] args) {
 		A_String a = new A_String();
-//		a.method1();
+		a.method1();
 //		a.method2();
 //		a.method3();
 //		a.method4();
-		a.method5();
+//		a.method5();
 	}
 
 	/*
